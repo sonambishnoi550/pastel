@@ -29,9 +29,8 @@
 </head>
 
 <body>
-    <section class="slide relative text-white hero-bg absolute inset-0 opacity-100 z-10 transition-opacity duration-500 px-5 xl:px-20 pb-16">
+    <section class="slide relative text-white overflow-hidden hero-bg absolute inset-0 opacity-100 z-10 transition-opacity duration-500 px-5 xl:px-20 pb-16">
    <div class="h-[100px]">
-
    </div>
         <div id="slider" class="w-full h-screen md:pt-[62px] pt-5">
             <img class="absolute md:max-w-[278px] max-w-[150px] xl:h-[205px] right-0 xl:top-[6%] top-[8%]"
@@ -52,12 +51,12 @@
                     </button>
                 </div>
                 <div id="image-container"
-                    class="relative max-md:pt-40 md:mt-0 mt-[-300px] max-sm:ml-[70px] md:w-full flex xl:justify-center items-center">
+                    class="relative max-md:pt-40 max-lg:pt-32 md:mt-0 mt-[-300px] max-sm:ml-[70px] md:w-full flex xl:justify-center items-center">
                 </div>
             </div>
         </div>
+        <div id="dots" class="absolute bottom-[5%] left-0 w-full flex justify-center items-center gap-3 z-30"></div>
         </section>
-    <div id="dots" class="absolute bottom-1 left-0 w-full flex justify-center items-center gap-3 z-30"></div>
 
     <script>
         const imageData = [
@@ -75,7 +74,7 @@
                 treats: [
                     { src: "assets/images/png/china-buns-one.png", class: "absolute lg:max-w-[172px] max-w-[64px] lg:top-[29%] top-[10%] lg:left-[35%] left-[30%] z-20" },
                     { src: "assets/images/png/china-buns-two.png", class: "absolute z-10 lg:left-[0%] left-[5%] lg:top-[45%] top-[50%] lg:max-w-[129px] max-w-[74px]" },
-                    { src: "assets/images/png/china-buns-three.png", class: "absolute right-[-16%] lg:max-w-[264px] max-w-[86px] xl:h-[231px]" },
+                    { src: "assets/images/png/china-buns-three.png", class: "absolute lg:right-[-16%] right-[0] lg:max-w-[264px] max-w-[86px] xl:h-[231px]" },
                 ]
             },
             {
@@ -88,15 +87,14 @@
             {
                 main: "assets/images/png/hero-lemon-berry.png",
                 treats: [
-                    { src: "assets/images/png/hero-lemon.png", class: "absolute lg:max-w-[127px] max-w-[60px] left-[28%] md:top-[25%] top-[50%] z-20" },
-                    { src: "assets/images/png/lemon-cake-one.png", class: "absolute md:max-w-[135px] max-w-[70px] bottom-[37%] xl:right-[10%] right-[20%] z-20" },
-                    { src: "assets/images/png/lemon-cake-two.png", class: "absolute lg:max-w-[101px] max-w-[67px] bottom-[20%] right-[0%] z-20" },
+                    { src: "assets/images/png/hero-lemon.png", class: "absolute lg:max-w-[127px] max-w-[60px] md:left-[28%] left-[40%] md:top-[25%] top-[50%] z-20" },
+                    { src: "assets/images/png/lemon-cake-one.png", class: "absolute md:max-w-[135px] max-w-[70px] xl:bottom-[37%] bottom-[20%] xl:right-[10%] md:right-[20%] right-[40%] z-20" },
+                    { src: "assets/images/png/lemon-cake-two.png", class: "absolute lg:max-w-[101px] max-w-[67px] lg:bottom-[20%] bottom-[10%] right-[5%] lg:right-[0%] z-20" },
                 ]
             }
         ];
 
         let current = 0;
-
         function renderSlideContent(index) {
             const container = document.getElementById("image-container");
             container.innerHTML = "";
@@ -157,15 +155,20 @@
             updateDots();
         }
 
-        function updateDots() {
+       function updateDots() {
             const dots = document.querySelectorAll(".dot");
             dots.forEach((dot, i) => {
-                dot.classList.toggle("opacity-100", i === current);
-                dot.classList.toggle("opacity-40", i !== current);
+                if (i === current) {
+                    dot.classList.add("size-[72px]", "opacity-100");
+                    dot.classList.remove("size-[48px]", "opacity-40");
+                } else {
+                    dot.classList.add("size-[48px]", "opacity-40");
+                    dot.classList.remove("size-[72px]", "opacity-100");
+                }
             });
         }
 
-        function setupDots() {
+       function setupDots() {
             const dotImages = [
                 'assets/images/png/hero-dot-one.png',
                 'assets/images/png/hero-dot-two.png',
@@ -176,7 +179,8 @@
             imageData.forEach((_, i) => {
                 const img = document.createElement("img");
                 img.src = dotImages[i] || dotImages[0];
-                img.className = "dot md:size-[72px] size-[36px] opacity-40 transition-all duration-300 cursor-pointer";
+                img.className = `dot transition-all duration-300 cursor-pointer ${i === current ? 'size-[72px] opacity-100' : 'size-[48px] opacity-40'}`;
+
                 img.addEventListener("click", () => {
                     current = i;
                     updateSlide(current);
@@ -184,6 +188,7 @@
                 dotsContainer.appendChild(img);
             });
         }
+
 
         setupDots();
         updateSlide(current);
