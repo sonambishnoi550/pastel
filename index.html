@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Protein Mug Cake</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+        body {
+            font-family: 'Anton', sans-serif !important;
+        }
+
+        .manrope-font {
+            font-family: 'Manrope', sans-serif !important;
+        }
+
+        .hero-bg {
+            background-image: url('assets/images/png/hero-bg.png');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+
+<body class="text-white font-sans">
+    <div id="slider" class="relative w-full h-screen overflow-hidden">
+        <!-- Slide 1 -->
+        <section
+            class="slide hero-bg absolute inset-0 opacity-100 z-10 transition-opacity duration-500 px-5 xl:px-20 pt-40 py-16">
+            <img class="absolute md:max-w-[278px] max-w-[150px] xl:h-[205px] right-0 xl:top-[11%] top-[8%]"
+                src="assets/images/png/hero-right-text.png" alt="hero-right-text">
+            <img class="treat absolute md:top-[-10%] top-[-2%] left-[40%] md:max-w-[171px] max-w-[74px] xl:h-[186px]"
+                src="assets/images/png/brownie-biscuit-four.png" alt="biscuit">
+            <div class="sm:flex sm:gap-10">
+                <div class="md:max-w-[500px] max-w-[158px] z-10">
+                    <h1 class="xl:text-[120px] lg:text-[80px] md:text-[60px] text-[50px] font-normal leading-[114%]">
+                        <span class="max-md:text-nowrap">CAKE WITH</span> BENEFITS
+                    </h1>
+                    <p class="max-w-[302px] manrope-font md:text-lg text-sm font-normal leading-[150%] pt-5 pb-6 text-white">
+                        For moms sneaking a sultry snack, athletes dripping post-workout, or anyone who wants dessert
+                        without the “I’ll start Monday” guilt.
+                    </p>
+                    <button
+                        class="bg-white md:block hidden manrope-font text-[#000C14] text-[22px] lg:px-[99px] px-10 py-4 rounded-full font-bold">
+                        Shop Now
+                    </button>
+                </div>
+                <div
+                    class="relative md:mt-12 mt-[-200px] max-sm:ml-[70px] md:w-full flex xl:justify-center items-center">
+                    <img src="assets/images/png/hero-brownie-points.png" alt="Protein Mug Cake"
+                        class="relative z-10 pt-20 xl:max-w-[560px] lg:max-w-[400px] max-w-[250px] xl:h-[575px]"/>
+                    <img src="assets/images/png/brownie-biscuit-two.png"
+                        class="treat absolute bottom-[52%] xl:right-[-3%] md:right-[5%] right-[17%] xl:max-w-[214px] md:max-w-[180px] max-w-[120px] z-20 xl:h-[124px]"
+                        alt="Brownie chunk"/>
+                    <img src="assets/images/png/brownie-biscuit-one.png"
+                        class="treat absolute z-10 bottom-[-16%] xl:right-[-5%] md:right-[10%] right-[15%] md:size-[218px] size-[150px] xl:size-[318px]"
+                        alt="Brownie stack"/>
+                    <img class="treat absolute md:bottom-[-10%] bottom-[13%] md:left-[-43%] left-[-21%] md:max-w-[171px] max-w-[78px] xl:h-[186px]"
+                        src="assets/images/png/brownie-biscuit-three.png" alt="biscuit"/>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 2 -->
+        <section
+            class="slide hero-bg absolute inset-0 opacity-0 z-0 transition-opacity duration-500 px-5 xl:px-20 pt-40 py-16">
+            <img class="absolute md:max-w-[278px] max-w-[150px] xl:h-[205px] right-0 xl:top-[11%] top-[8%]"
+                src="assets/images/png/hero-right-text.png" alt="hero-right-text">
+            <div class="sm:flex sm:gap-10">
+                <div class="md:max-w-[500px] max-w-[158px] z-10">
+                    <h1 class="xl:text-[120px] lg:text-[80px] md:text-[60px] text-[50px] font-normal leading-[114%]">
+                        <span class="max-md:text-nowrap">CAKE WITH</span> BENEFITS
+                    </h1>
+                    <p class="max-w-[302px] manrope-font md:text-lg text-sm font-normal leading-[150%] pt-5 pb-6 text-white">
+                        For moms sneaking a sultry snack, athletes dripping post-workout, or anyone who wants dessert
+                        without the “I’ll start Monday” guilt.
+                    </p>
+                    <button class="bg-white md:block hidden manrope-font text-[#000C14] text-[22px] lg:px-[99px] px-10 py-4 rounded-full font-bold">
+                        Shop Now
+                    </button>
+                </div>
+                <div
+                    class="relative max-md:pt-40 md:mt-0 mt-[-200px] max-sm:ml-[70px] md:w-full flex xl:justify-center items-center">
+                    <img src="assets/images/png/china-buns.png" alt="Protein Mug Cake"
+                        class="relative z-10 xl:max-w-[507px] lg:max-w-[400px] max-w-[250px] xl:h-[586px]"/>
+                    <img src="assets/images/png/china-buns-one.png"
+                        class="treat absolute lg:max-w-[172px] max-w-[64px] lg:top-[-9%] top-[10%] lg:left-[35%] left-[30%] z-20"
+                        alt="Brownie chunk"/>
+                    <img src="assets/images/png/china-buns-two.png"
+                        class="treat absolute z-10 lg:left-[10%] left-[5%] lg:top-[25%] top-[50%] lg:max-w-[129px] max-w-[74px]"
+                        alt="Brownie stack"/>
+                    <img class="treat absolute right-[-16%] lg:max-w-[264px] max-w-[86px] xl:h-[231px]"
+                        src="assets/images/png/china-buns-three.png" alt="biscuit" />
+                </div>
+            </div>
+        </section>
+        <!-- slider 3 -->
+        <section class="slide hero-bg absolute inset-0 opacity-0 z-0 transition-opacity duration-500 px-5 xl:px-20 pt-40 py-16">
+            <img class="absolute md:max-w-[278px] max-w-[150px] xl:h-[205px] right-0 xl:top-[11%] top-[8%]"
+                src="assets/images/png/hero-right-text.png" alt="hero-right-text">
+            <div class="sm:flex sm:gap-10">
+                <div class="md:max-w-[500px] max-w-[158px] z-10">
+                    <h1 class="xl:text-[120px] lg:text-[80px] md:text-[60px] text-[50px] font-normal leading-[114%]">
+                        <span class="max-md:text-nowrap">CAKE WITH</span> BENEFITS
+                    </h1>
+                    <p class="max-w-[302px] manrope-font md:text-lg text-sm font-normal leading-[150%] pt-5 pb-6 text-white">
+                        For moms sneaking a sultry snack, athletes dripping post-workout, or anyone who wants dessert
+                        without the
+                        “I’ll start Monday” guilt.
+                    </p>
+                    <button
+                        class="bg-white md:block hidden manrope-font text-[#000C14] text-[22px] lg:px-[99px] px-10 py-4 rounded-full font-bold">
+                        Shop Now
+                    </button>
+                </div>
+                <div class="relative max-md:pt-40 md:mt-0 mt-[-200px] max-sm:ml-[70px] md:w-full flex xl:justify-center items-center">
+                    <img src="assets/images/png/hero-german-joyride.png" alt="Protein Mug Cake"
+                        class="relative z-10 xl:max-w-[648px] lg:max-w-[400px] max-w-[250px] xl:h-[655px]"/>
+                    <img src="assets/images/png/protein-cake-one.png"
+                        class="treat absolute lg:max-w-[180px] max-w-[73px] left-[25%] lg:top-[5%] top-[50%] z-20" alt="Brownie chunk"/>
+                    <img src="assets/images/png/protein-cake-two.png"
+                        class="treat absolute lg:max-w-[182px] max-w-[76px] lg:bottom-[30%] bottom-[15%] right-[20%] z-20" alt="Brownie stack"/>
+                </div>
+            </div>
+        </section>
+        <!-- slide 4 -->
+        <section class="slide hero-bg absolute inset-0 opacity-0 z-0 transition-opacity duration-500 px-5 xl:px-20 pt-40 py-16">
+            <img class="absolute md:max-w-[278px] max-w-[150px] xl:h-[205px] right-0 xl:top-[11%] top-[8%]"
+                src="assets/images/png/hero-right-text.png" alt="hero-right-text">
+            <div class="sm:flex sm:gap-10">
+                <div class="md:max-w-[500px] max-w-[158px] z-10">
+                    <h1 class="xl:text-[120px] lg:text-[80px] md:text-[60px] text-[50px] font-normal leading-[114%]">
+                        <span class="max-md:text-nowrap">CAKE WITH</span> BENEFITS
+                    </h1>
+                    <p class="max-w-[302px] manrope-font md:text-lg text-sm font-normal leading-[150%] pt-5 pb-6 text-white">
+                        For moms sneaking a sultry snack, athletes dripping post-workout, or anyone who wants dessert
+                        without the
+                        “I’ll start Monday” guilt.
+                    </p>
+                    <button
+                        class="bg-white md:block hidden manrope-font text-[#000C14] text-[22px] lg:px-[99px] px-10 py-4 rounded-full font-bold">
+                        Shop Now
+                    </button>
+                </div>
+                <div class="relative max-md:pt-40 md:mt-12 mt-[-200px] max-sm:ml-[70px] md:w-full flex xl:justify-center items-center">
+                    <img src="assets/images/png/hero-lemon-berry.png" alt="Protein Mug Cake"
+                        class="relative z-10 xl:max-w-[617px] lg:max-w-[400px] max-w-[250px] xl:h-[624px]"/>
+                    <img src="assets/images/png/hero-lemon.png"
+                        class="treat absolute lg:max-w-[127px] max-w-[60px] left-[28%] md:top-[5%] top-[50%] z-20" alt="Brownie chunk"/>
+                    <img src="assets/images/png/lemon-cake-one.png"
+                        class="treat absolute md:max-w-[135px] max-w-[70px] bottom-[57%] xl:right-[10%] right-[20%] z-20" alt="Brownie stack"/>
+                        <img src="assets/images/png/lemon-cake-two.png" class="treat absolute lg:max-w-[101px] max-w-[67px] bottom-[40%] right-[0%] z-20"
+                            alt="Brownie stack"/>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div id="dots" class="absolute bottom-1 left-0 w-full flex justify-center items-center gap-3 z-30"></div>
+<script>
+    const slides = document.querySelectorAll(".slide");
+    let current = 0;
+
+    function animateIn(slide) {
+        const treats = slide.querySelectorAll(".treat");
+        const mainImage = slide.querySelector("img[alt='Protein Mug Cake']");
+        if (!mainImage) return;
+        const mainRect = mainImage.getBoundingClientRect();
+        treats.forEach(treat => {
+            const treatRect = treat.getBoundingClientRect();
+            const offsetX = mainRect.left + mainRect.width / 2 - (treatRect.left + treatRect.width / 2);
+            const offsetY = mainRect.top + mainRect.height / 2 - (treatRect.top + treatRect.height / 2);
+            gsap.set(treat, {
+                opacity: 0,
+                scale: 0,
+                x: offsetX,
+                y: offsetY,
+                rotateZ: 0,
+            });
+        });
+        gsap.to(treats, {
+            opacity: 1,
+            scale: 1,
+            x: () => gsap.utils.random(-80, 80),
+            y: () => gsap.utils.random(-100, -30),
+            rotateZ: () => gsap.utils.random(-25, 25),
+            stagger: 0.1,
+            duration: 0.6,
+            ease: "back.out(2)",
+            onComplete: () => {
+                gsap.to(treats, {
+                    y: "+=10",
+                    repeat: -1,
+                    yoyo: true,
+                    duration: 1.5,
+                    ease: "sine.inOut"
+                });
+            }
+        });
+    }
+    function animateOut(slide) {
+        const treats = slide.querySelectorAll(".treat");
+        gsap.killTweensOf(treats);
+
+        gsap.to(treats, {
+            opacity: 0,
+            scale: 0.8,
+            x: 0,
+            y: 0,
+            rotateZ: 0,
+            duration: 0.4,
+            ease: "power2.inOut"
+        });
+    }
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            if (i === index) {
+                slide.classList.add("z-10");
+                slide.classList.remove("z-0");
+                gsap.to(slide, { opacity: 1, duration: 0.5, onComplete: () => animateIn(slide) });
+            } else {
+                slide.classList.remove("z-10");
+                slide.classList.add("z-0");
+                animateOut(slide);
+                gsap.to(slide, { opacity: 0, duration: 0.5 });
+            }
+        });
+        updateDots();
+    }
+    function nextSlide() {
+        current = (current + 1) % slides.length;
+        showSlide(current);
+    }
+    const dotImages = [
+        'assets/images/png/hero-dot-one.png',
+        'assets/images/png/hero-dot-two.png',
+        'assets/images/png/hero-dot-three.png'
+    ];
+    const dotsContainer = document.getElementById("dots");
+    slides.forEach((_, i) => {
+        const img = document.createElement("img");
+        img.src = dotImages[i] || dotImages[0];
+        img.className = "dot md:size-[72px] size-[36px] opacity-40 transition-all duration-300 cursor-pointer";
+        img.addEventListener("click", () => {
+            current = i;
+            showSlide(current);
+        });
+        dotsContainer.appendChild(img);
+    });
+    function updateDots() {
+        const dots = document.querySelectorAll(".dot");
+        dots.forEach((dot, i) => {
+          if (i === current) {
+                dot.classList.add("opacity-100");
+                dot.classList.remove("opacity-40");
+                dot.classList.add("size-[36px]", "md:size-[72px]");
+                dot.classList.remove("size-[28px]", "md:size-[48px]");
+            } else {
+                dot.classList.remove("opacity-100");
+                dot.classList.add("opacity-40");
+                dot.classList.remove("size-[36px]", "md:size-[72px]");
+                dot.classList.add("size-[28px]", "md:size-[48px]");
+            }
+        });
+    }
+    showSlide(current);
+    updateDots();
+    setInterval(nextSlide, 5000);
+</script>
+</body>
+
+</html>
